@@ -1,0 +1,16 @@
+{
+  "links": [
+    { "label": "Sunday’s Sermon", "url": "https://www.sermonaudio.com/source_detail.asp?sourceid=covenantfamily" },
+    { "label": "Recent Posts", "url": "/weblog/", "children": [
+      { "label": "News", "url": "/category/news-and-updates/" },
+      { "label": "Events", "url": "/category/events/" },
+      { "label": "Devotional", "url": "/category/devotional/" },
+      { "label": "Outreach", "url": "/category/outreach/" },
+      { "label": "Theology", "url": "/category/theology/" }
+    ]},
+    { "label": "Historical Archive", "url": "/category/rev-serven/", "children": [
+      { "label": "Rev. Serven", "url": "/category/rev-serven/" },
+      { "label": "Men’s Advance", "url": "/category/mens-advance/" }
+    ]}
+  ]
+}

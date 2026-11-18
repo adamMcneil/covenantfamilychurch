@@ -1,0 +1,36 @@
+{
+  "title": "Covenant Family Church",
+  "tagline": "A member congregation of the Orthodox Presbyterian Church",
+  "description": "Covenant Family Church is a conservative, Bible-believing, and elder-governed congregation of the Orthodox Presbyterian Church in Wentzville, MO.",
+  "url": "https://covenantfamilychurch.net",
+  "phone": "(303) 656-5577",
+  "phoneHref": "tel:+13036565577",
+  "email": "peterjb@truevine.net",
+  "pastor": "Rev. Peter Bringe",
+  "mailingAddress": ["Covenant Family Church", "PO Box 568", "Wentzville, MO 63385"],
+  "meetingPlace": {
+    "name": "Progress Park Center",
+    "street": "968 Meyer Road",
+    "city": "Wentzville, MO 63385",
+    "directions": "Drive around the baseball field to the building in the middle of the parking lot.",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=968+Meyer+Rd%2C+Wentzville%2C+MO+63385",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49739.57863720636!2d-90.88906448700988!3d38.81588459263335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87dec625e1420219%3A0xe0bcdc240de4e92c!2s968+Meyer+Rd%2C+Wentzville%2C+MO+63385!5e0!3m2!1sen!2sus!4v1559932913112!5m2!1sen!2sus"
+  },
+  "schedule": [
+    { "time": "10:00 am", "what": "Sunday School" },
+    { "time": "11:00 am", "what": "Morning Worship" },
+    { "time": "12:45 pm", "what": "Fellowship Meal" },
+    { "time": "5:00 pm", "what": "Evening Worship" }
+  ],
+  "audioBase": "https://download.covenantfamilychurch.net/",
+  "contactForm": {
+    "action": "",
+    "accessKey": ""
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/Covenant-Family-Church-341707822513407/",
+    "youtube": "https://www.youtube.com/channel/UCgxGIBIWG2Z6cc4Iv2dxwoA",
+    "sermonaudio": "https://www.sermonaudio.com/source_detail.asp?sourceid=covenantfamily",
+    "blog": "https://forchristskingdom.blogspot.com/"
+  }
+}

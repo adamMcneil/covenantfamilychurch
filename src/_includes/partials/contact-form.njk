@@ -1,0 +1,30 @@
+<form class="contact-form" method="post"
+  {%- if site.contactForm.action %} action="{{ site.contactForm.action }}"{% endif %}
+  data-mailto="{{ site.email }}" data-subject="Message from the church website">
+  {% if site.contactForm.accessKey %}<input type="hidden" name="access_key" value="{{ site.contactForm.accessKey }}">{% endif %}
+  <input type="hidden" name="subject" value="Message from the Covenant Family Church website">
+  <div class="field-pair">
+    <p class="field">
+      <label for="cf-first">First name</label>
+      <input id="cf-first" name="first_name" autocomplete="given-name" required>
+    </p>
+    <p class="field">
+      <label for="cf-last">Last name</label>
+      <input id="cf-last" name="last_name" autocomplete="family-name" required>
+    </p>
+  </div>
+  <p class="field">
+    <label for="cf-email">Email</label>
+    <input id="cf-email" name="email" type="email" autocomplete="email" required>
+  </p>
+  <p class="field">
+    <label for="cf-message">Comment or message</label>
+    <textarea id="cf-message" name="message" rows="6" required></textarea>
+  </p>
+  <p class="field hp" aria-hidden="true">
+    <label for="cf-hp">Leave this empty</label>
+    <input id="cf-hp" name="botcheck" tabindex="-1" autocomplete="off">
+  </p>
+  <p><button class="button button-solid" type="submit">Send message</button></p>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>

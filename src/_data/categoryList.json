@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "civic",
+    "name": "Civic",
+    "description": ""
+  },
+  {
+    "slug": "devotional",
+    "name": "Devotional",
+    "description": ""
+  },
+  {
+    "slug": "events",
+    "name": "Events",
+    "description": ""
+  },
+  {
+    "slug": "faq",
+    "name": "FAQ",
+    "description": ""
+  },
+  {
+    "slug": "history",
+    "name": "History",
+    "description": ""
+  },
+  {
+    "slug": "mens-advance",
+    "name": "Men's Advance",
+    "description": "Archive of Men's Advance Posts"
+  },
+  {
+    "slug": "news-and-updates",
+    "name": "News",
+    "description": ""
+  },
+  {
+    "slug": "outreach",
+    "name": "Outreach",
+    "description": ""
+  },
+  {
+    "slug": "photos",
+    "name": "Photos",
+    "description": ""
+  },
+  {
+    "slug": "rev-serven",
+    "name": "Rev. Serven",
+    "description": "Archive of Pastor Serven's Sermons"
+  },
+  {
+    "slug": "theology",
+    "name": "Theology",
+    "description": ""
+  },
+  {
+    "slug": "worship",
+    "name": "Worship",
+    "description": ""
+  }
+]

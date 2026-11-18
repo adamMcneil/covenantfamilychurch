@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+title: Sunday
+permalink: /sunday/
+metaDescription: Join Covenant Family Church on the Lord’s Day at Progress Park, 968 Meyer Road, Wentzville. Sunday School 10 am, Morning Worship 11 am, Evening Worship 5 pm.
+---
+<header class="page-head">
+  <div class="wrap"><h1>Sunday</h1></div>
+</header>
+<div class="wrap page-body">
+  <div class="sunday-grid" data-pagefind-body>
+    <div class="prose">
+      <p>We gather together on Sunday, the Lord’s Day, at Progress Park, {{ site.meetingPlace.street }}, {{ site.meetingPlace.city }}. We meet at the {{ site.meetingPlace.name }}. {{ site.meetingPlace.directions }}</p>
+      <p>Below is our current Lord’s Day schedule. You are welcome to join us for as much of the day as you would like. If worship is canceled due to weather, it will be announced <a href="/announcements/">here</a>.</p>
+      <dl class="schedule schedule-large">
+        {% for s in site.schedule %}
+        <div><dt>{{ s.time }}</dt><dd>{{ s.what }}</dd></div>
+        {% endfor %}
+      </dl>
+      <p class="button-row">
+        <a class="button button-solid" href="/what-can-i-expect-on-sunday/">What to expect on your first visit</a>
+        <a class="button" href="{{ site.meetingPlace.mapUrl }}">Get directions</a>
+      </p>
+      <p>Can’t make it in person? We <a href="/worship-livestream/">livestream our services</a>.</p>
+    </div>
+    <div class="embed embed-map">
+      <iframe src="{{ site.meetingPlace.mapEmbed }}" title="Map to {{ site.meetingPlace.name }}, {{ site.meetingPlace.street }}" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>

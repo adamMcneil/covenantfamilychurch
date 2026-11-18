@@ -1,0 +1,5 @@
+<div class="audio-player">
+  <p class="audio-label">Listen to this sermon</p>
+  <audio controls preload="none" src="{{ track | audioUrl }}"></audio>
+  <p class="audio-download"><a href="{{ track | audioUrl }}" download>Download the MP3</a> ({{ track | fileName }})</p>
+</div>

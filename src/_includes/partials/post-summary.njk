@@ -1,0 +1,14 @@
+<article class="summary{% if post.data.image %} has-thumb{% endif %}">
+  {% if post.data.image %}<a class="summary-thumb" href="{{ post.url }}" tabindex="-1" aria-hidden="true"><img src="{{ post.data.image | thumb(300) }}" alt="" loading="lazy"></a>{% endif %}
+  <div class="summary-text">
+    <h2 class="summary-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <p class="post-meta">
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate }}</time>
+      {%- if post.data.author %}, by {{ post.data.author | authorName }}{% endif %}
+      {%- if post.data.categories and post.data.categories.length %}, in {% for c in post.data.categories %}<a href="/category/{{ c }}/">{{ c | categoryName }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}
+    </p>
+    {% set s = post | summary(45) %}
+    {% if s %}<p>{{ s }}</p>{% elif post.data.audio %}<p>Sermon audio recording.</p>{% endif %}
+    <p class="summary-more"><a href="{{ post.url }}">Read {% if post.data.audio and not s %}and listen{% else %}more{% endif %}<span class="visually-hidden">: {{ post.data.title }}</span></a></p>
+  </div>
+</article>

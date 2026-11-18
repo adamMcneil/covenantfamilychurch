@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+---
+{% set nb = collections.posts | neighbors(page.url) %}
+<header class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="/weblog/">Blog</a>{% if categories and categories.length %} / <a href="/category/{{ categories[0] }}/">{{ categories[0] | categoryName }}</a>{% endif %}</p>
+  </div>
+</header>
+<div class="wrap with-sidebar">
+  <article class="post" data-pagefind-body>
+    <h1 class="post-title">{{ title }}</h1>
+    {% include "partials/post-meta.njk" %}
+    {% if image %}<figure class="post-image"><img src="{{ image }}" alt=""></figure>{% endif %}
+    {% if audio %}{% set track = audio %}{% include "partials/audio.njk" %}{% endif %}
+    {% for track in audioList %}{% include "partials/audio.njk" %}{% endfor %}
+    <div class="prose">
+      {{ content | safe }}
+    </div>
+    <nav class="post-nav" aria-label="More posts">
+      {% if nb.older %}<a class="post-nav-older" href="{{ nb.older.url }}" rel="prev"><span>Older post</span>{{ nb.older.data.title }}</a>{% endif %}
+      {% if nb.newer %}<a class="post-nav-newer" href="{{ nb.newer.url }}" rel="next"><span>Newer post</span>{{ nb.newer.data.title }}</a>{% endif %}
+    </nav>
+  </article>
+  {% include "partials/sidebar.njk" %}
+</div>

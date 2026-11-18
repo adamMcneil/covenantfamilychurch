@@ -1,0 +1,116 @@
+---
+layout: layouts/base.njk
+bodyClass: home
+permalink: /
+metaDescription: Covenant Family Church is a conservative, Bible-believing, and elder-governed congregation of the Orthodox Presbyterian Church in Wentzville, MO. Join us Sunday at Progress Park.
+features:
+  - url: /truth/
+    label: Truth
+    image: /wp-content/uploads/2019/01/FS-bible11.jpg
+  - url: /vision/
+    label: Vision
+    image: /wp-content/uploads/2019/01/SL-family.jpg
+  - url: /roots/
+    label: Roots
+    image: /wp-content/uploads/2019/01/FS-rooted.jpg
+---
+<section class="hero">
+  <img class="hero-bg" src="/wp-content/uploads/2019/01/FS-bible11.jpg" alt="" width="960" height="331">
+  <div class="wrap hero-inner">
+    <blockquote class="hero-verse">
+      <p>So then you are no longer strangers and foreigners, but fellow citizens with the saints and members of the household of God.</p>
+      <footer>Ephesians 2:19</footer>
+    </blockquote>
+    <aside class="lords-day" aria-labelledby="lords-day-title">
+      <h2 id="lords-day-title">Join us on the Lord’s Day</h2>
+      <dl class="schedule">
+        {% for s in site.schedule %}
+        <div><dt>{{ s.time }}</dt><dd>{{ s.what }}</dd></div>
+        {% endfor %}
+      </dl>
+      <p class="lords-day-place">
+        <strong>{{ site.meetingPlace.name }}</strong><br>
+        {{ site.meetingPlace.street }}, {{ site.meetingPlace.city }}
+      </p>
+      <p class="lords-day-actions">
+        <a class="button button-solid" href="/sunday/">Plan your visit</a>
+        <a class="button button-ghost" href="/worship-livestream/">Watch the livestream</a>
+      </p>
+    </aside>
+  </div>
+</section>
+
+<section class="triptych wrap" aria-label="Who we are">
+  {% for f in features %}
+  {% set p = collections.all | findByUrl(f.url) %}
+  <article class="feature">
+    <a class="feature-image" href="{{ f.url }}" tabindex="-1" aria-hidden="true"><img src="{{ f.image }}" alt="" loading="lazy" width="960" height="331"></a>
+    <h2><a href="{{ f.url }}">{{ f.label }}</a></h2>
+    <p>{{ p | summary(42) }}</p>
+    <p class="feature-more"><a href="{{ f.url }}">Read more<span class="visually-hidden"> about our {{ f.label | lower }}</span></a></p>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="welcome">
+  <div class="wrap welcome-grid">
+    <article class="welcome-card">
+      <img src="/wp-content/uploads/2019/01/looking_church.png" alt="" width="232" height="117" loading="lazy">
+      <h2>Visit</h2>
+      <p class="welcome-lead">Looking for a church?</p>
+      <p>Your search will be a complicated one, but we offer God-honoring worship, Bible-based sermons, and multi-generational fellowship. Is this what you have been looking for?</p>
+      <p><a class="button" href="/sunday/">Come and see</a></p>
+    </article>
+    <article class="welcome-card">
+      <img src="/wp-content/uploads/2019/01/listen_sermon.png" alt="" width="232" height="117" loading="lazy">
+      <h2>Listen</h2>
+      <p class="welcome-lead">God’s Word changes lives.</p>
+      <p>That is why we spend so much of our time reading it, studying it, and hearing it preached. To what have you been listening? Would you like to hear what God has to say?</p>
+      <p><a class="button" href="/sermons/">Audio sermons</a></p>
+    </article>
+    <article class="welcome-card">
+      <img src="/wp-content/uploads/2019/01/connect.png" alt="" width="232" height="117" loading="lazy">
+      <h2>Connect</h2>
+      <p class="welcome-lead">Talk with our Pastor</p>
+      <p>His name is Peter, he is very approachable, and would be happy to spend some time speaking with you today. <a href="{{ site.phoneHref }}">Call {{ site.phone }}</a>, or see the other options.</p>
+      <p><a class="button" href="/contact/">Contact options</a></p>
+    </article>
+  </div>
+</section>
+
+{% set ann = collections.all | findByUrl("/announcements/") %}
+<section class="this-week wrap">
+  <a class="this-week-paper" href="/announcements/" tabindex="-1" aria-hidden="true"><img src="/wp-content/uploads/2019/01/news-link.png" alt="" width="436" height="278" loading="lazy"></a>
+  <div class="this-week-text">
+    <h2>This week at Covenant Family Church</h2>
+    {% if ann %}
+    {% set paras = ann | paragraphs %}
+    {% set lead = paras | selectLead %}
+    {% if paras[0] and paras[0].length < 20 %}<p class="post-meta">Posted {{ paras[0] }}</p>{% endif %}
+    {% if lead %}<p>{{ lead | truncateWords(70) }}</p>{% endif %}
+    {% endif %}
+    <p><a class="button" href="/announcements/">Read this week’s announcements</a></p>
+  </div>
+</section>
+
+{% if collections.photoAlbum.length %}
+<section class="album">
+  <div class="wrap">
+    <h2>Covenant Family photo album</h2>
+    <ul class="album-grid">
+      {% for p in collections.photoAlbum %}
+      <li>
+        <a class="album-photo" href="{{ p.data.image }}" data-caption="{{ p.data.title }}" data-post="{{ p.url | htmlBaseUrl }}">
+          <img src="{{ p.data.image | thumb(400) }}" alt="{{ p.data.title }}" loading="lazy">
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <dialog class="lightbox" aria-label="Photo">
+    <form method="dialog"><button class="lightbox-close" aria-label="Close photo">&times;</button></form>
+    <img src="" alt="">
+    <p class="lightbox-caption"></p>
+  </dialog>
+</section>
+{% endif %}

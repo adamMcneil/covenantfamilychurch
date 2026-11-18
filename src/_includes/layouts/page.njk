@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+---
+<header class="page-head">
+  <div class="wrap">
+    <h1>{{ title }}</h1>
+  </div>
+</header>
+{# The page's featured image is used for social previews (og:image), not shown here, as on the old site. #}
+<div class="wrap page-body">
+  <article class="prose" data-pagefind-body>
+    {{ content | safe }}
+    {% if contactForm %}
+    <h2>Questions?</h2>
+    {% include "partials/contact-form.njk" %}
+    {% endif %}
+  </article>
+</div>

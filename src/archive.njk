@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.archivePages
+  size: 1
+  alias: archive
+  addAllPagesToCollections: false
+eleventyExcludeFromCollections: true
+permalink: "{{ archive.url }}"
+eleventyComputed:
+  title: "{{ archive.title }}{% if archive.pageNumber > 1 %} (page {{ archive.pageNumber }}){% endif %}"
+---
+<header class="page-head">
+  <div class="wrap">
+    <h1>{{ archive.heading }}</h1>
+    {% if archive.description %}<p class="page-intro">{{ archive.description }}</p>{% endif %}
+  </div>
+</header>
+<div class="wrap with-sidebar">
+  <div class="archive">
+    {% if archive.kind == "blog" and archive.pageNumber == 1 %}
+    <a class="blog-banner" href="{{ site.social.blog }}"><img src="/wp-content/uploads/2019/01/blog_mast.png" alt="For Christ’s Kingdom: read the blog" width="834" height="233"></a>
+    {% endif %}
+    {% for post in archive.posts %}
+      {% include "partials/post-summary.njk" %}
+    {% else %}
+      <p>There are no posts here yet. Browse the <a href="/weblog/">blog archive</a> instead.</p>
+    {% endfor %}
+    {% if archive.totalPages > 1 %}
+    <nav class="pager" aria-label="Pages">
+      {% if archive.nextUrl %}<a href="{{ archive.nextUrl }}" rel="next">Older posts</a>{% else %}<span></span>{% endif %}
+      <span class="pager-count">Page {{ archive.pageNumber }} of {{ archive.totalPages }}</span>
+      {% if archive.prevUrl %}<a href="{{ archive.prevUrl }}" rel="prev">Newer posts</a>{% else %}<span></span>{% endif %}
+    </nav>
+    {% endif %}
+  </div>
+  {% include "partials/sidebar.njk" %}
+</div>

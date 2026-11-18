@@ -1,0 +1,25 @@
+[
+  { "label": "Home", "url": "/" },
+  { "label": "Basics", "url": "/basics/", "children": [
+    { "label": "Distinctives", "url": "/distinctives/" },
+    { "label": "History", "url": "/history/" },
+    { "label": "Leadership", "url": "/leadership/" },
+    { "label": "Denomination", "url": "/affiliations/" }
+  ]},
+  { "label": "Beliefs", "url": "/beliefs/", "children": [
+    { "label": "The Holy Bible", "url": "https://www.biblegateway.com/passage/?search=John+1&version=ESV" },
+    { "label": "Westminster Standards", "url": "https://opc.org/confessions.html" },
+    { "label": "Book of Church Order", "url": "https://opc.org/order.html" }
+  ]},
+  { "label": "Sunday", "url": "/sunday/" },
+  { "label": "Announcements", "url": "/announcements/" },
+  { "label": "Ministries", "url": "/ministries/", "children": [
+    { "label": "Worship", "url": "/worship/" },
+    { "label": "Outreach", "url": "/outreach/" },
+    { "label": "Resources", "url": "/resources-2/" }
+  ]},
+  { "label": "Sermons", "url": "/sermons/" },
+  { "label": "Conference", "url": "https://cfcopc.github.io/conference/" },
+  { "label": "Blog", "url": "https://forchristskingdom.blogspot.com/" },
+  { "label": "Contact", "url": "/contact/" }
+]

@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+title: Page not found
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+<header class="page-head">
+  <div class="wrap"><h1>Page not found</h1></div>
+</header>
+<div class="wrap page-body prose">
+  <p>There’s no page at this address. It may have moved when the site was rebuilt.</p>
+  <form class="sidebar-search" action="/search/" method="get" role="search">
+    <label for="nf-q">Search the site</label>
+    <div class="search-row"><input id="nf-q" type="search" name="q"><button type="submit">Search</button></div>
+  </form>
+  <p>Or start from the <a href="/">home page</a>, the <a href="/sunday/">Sunday schedule</a>, or the <a href="/weblog/">blog archive</a>.</p>
+</div>

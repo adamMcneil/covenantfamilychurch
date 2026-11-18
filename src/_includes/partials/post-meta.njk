@@ -1,0 +1,7 @@
+{%- set d = date if date else post.date -%}
+<p class="post-meta">
+  <time datetime="{{ d | isoDate }}">{{ d | displayDate }}</time>
+  {%- if author %}, by <a href="/author/{{ author }}/">{{ author | authorName }}</a>{% endif %}
+  {%- if categories and categories.length %}, in {% for c in categories %}<a href="/category/{{ c }}/">{{ c | categoryName }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}
+  {%- if wpTags and wpTags.length %}. Tagged {% for t in wpTags %}<a href="/tag/{{ t }}/">{{ t | tagName }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}
+</p>

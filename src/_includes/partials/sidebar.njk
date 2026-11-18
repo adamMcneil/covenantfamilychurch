@@ -1,0 +1,30 @@
+<aside class="sidebar" aria-label="Blog">
+  <form class="sidebar-search" action="/search/" method="get" role="search">
+    <label for="sidebar-q">Search</label>
+    <div class="search-row">
+      <input id="sidebar-q" type="search" name="q">
+      <button type="submit">Search</button>
+    </div>
+  </form>
+  <section class="sidebar-block">
+    <h2>Browse</h2>
+    <ul class="sidebar-links">
+      {% for l in sidebar.links %}
+      <li><a href="{{ l.url }}">{{ l.label }}</a>
+        {% if l.children %}<ul>{% for c in l.children %}<li><a href="{{ c.url }}"{% if c.url == page.url %} aria-current="page"{% endif %}>{{ c.label }}</a></li>{% endfor %}</ul>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section class="sidebar-block">
+    <h2>Archives</h2>
+    <details class="archive-list">
+      <summary>Posts by month</summary>
+      <ul>
+        {% for m in collections.monthArchive %}
+        <li><a href="{{ m.url }}"{% if m.url == page.url %} aria-current="page"{% endif %}>{{ m.label }}</a> <span class="count">{{ m.count }}</span></li>
+        {% endfor %}
+      </ul>
+    </details>
+  </section>
+</aside>

@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Search
+permalink: /search/
+metaDescription: Search the Covenant Family Church website.
+---
+{% block head %}{% endblock %}
+<header class="page-head">
+  <div class="wrap"><h1>Search</h1></div>
+</header>
+<div class="wrap page-body">
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+  <div id="search" class="search-ui" data-base="{{ '/' | htmlBaseUrl }}"></div>
+  <noscript><p>Search needs JavaScript. You can also browse the <a href="/weblog/">blog archive</a>.</p></noscript>
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const el = document.getElementById('search');
+      const ui = new PagefindUI({ element: '#search', baseUrl: el.dataset.base, showSubResults: true, showImages: false, resetStyles: false });
+      const q = new URLSearchParams(location.search).get('q');
+      if (q) ui.triggerSearch(q);
+    });
+  </script>
+</div>
