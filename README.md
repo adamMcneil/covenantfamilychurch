@@ -18,6 +18,30 @@ What he does each week: open app.pagescms.org, choose **Announcements**, replace
 
 If a save doesn't show up on the site within a few minutes, the build failed: GitHub emails the repository owner, and the **Actions** tab shows why. The editor only manages `src/pages/announcements.md`'s title and text; the page's other data is in `src/pages/announcements.11tydata.js`, because Pages CMS rewrites the front matter from its form and drops anything else.
 
+## Member directory
+
+`/members/` lets church members download the directory PDF. A member enters their email, gets a code by email, and signs in. Only people you have added can sign in, and the file is in a private bucket that only signed-in members can read. It runs on a free [Supabase](https://supabase.com) project (sign-in and file storage), which the page talks to from the browser (`src/assets/js/members.js`). Until `members` in `src/_data/site.json` is filled in, the page says the directory isn't online yet.
+
+One-time setup (menu names in the Supabase dashboard may differ slightly):
+
+1. Create a free Supabase account and a project (region East US). Note the **Project URL** and the **publishable key** (Project Settings → API Keys). Both are meant to be public; the bucket's rules are what protect the file.
+2. In the SQL Editor, run `supabase/setup.sql`. It creates the private `members` bucket, the members-only download rule, and the keepalive row.
+3. Authentication → Sign In / Providers: turn off **Allow new users to sign up**, and keep the Email provider on.
+4. Authentication → Emails → SMTP Settings: turn on custom SMTP with the church mailbox (IONOS: host `smtp.ionos.com`, port 587, the mailbox address and its password) and sender name "Covenant Family Church". Supabase's built-in sender only mails the project's own team.
+5. Authentication → Emails → Templates:
+   - **Magic link**: subject "Your sign-in code for the Covenant Family Church directory", with `{{ .Token }}` in the body. The token is what makes it send a code instead of a link.
+   - **Invite user**: say they have been added to the member directory, with a link to `{{ .ConfirmationURL }}`.
+6. Authentication → URL Configuration: set the Site URL to `https://adammcneil.github.io/covenantfamilychurch/members/` (`https://covenantfamilychurch.net/members/` after the domain move). Invitation links land there.
+7. Storage → `members`: upload the directory as `directory.pdf`.
+8. Put the Project URL and publishable key in `src/_data/site.json` under `members`, then push.
+
+Running it:
+
+- **Add a member**: Authentication → Users → Add user → Send invitation, with their email.
+- **Remove a member**: delete them under Authentication → Users. They can't sign in again; a sign-in already open lasts at most an hour.
+- **New directory**: upload it to the `members` bucket as `directory.pdf`, replacing the old one.
+- **Keeping it awake**: Supabase pauses free projects after a week without activity, so `.github/workflows/supabase-keepalive.yml` reads a row twice a week. If the project pauses anyway, restore it from the Supabase dashboard. GitHub turns scheduled workflows off after 60 days without commits; the weekly announcements keep it on.
+
 ## Common edits
 
 You can make all of these in the GitHub web editor (open the file, click the pencil, then **Commit changes**). The site redeploys on its own.

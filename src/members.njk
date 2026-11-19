@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+title: Member directory
+permalink: /members/
+metaDescription: The Covenant Family Church member directory, for members of the church.
+---
+{# Sign-in and download run in members.js against Supabase (site.json → members).
+   No data-pagefind-body here, so search doesn't index this page. #}
+<header class="page-head">
+  <div class="wrap"><h1>Member directory</h1></div>
+</header>
+<div class="wrap page-body">
+  <article class="prose">
+    {% set m = site.members %}
+    {% if m.supabaseUrl and m.supabaseKey %}
+    <p>The church directory is for members of Covenant Family Church. Sign in with the email address the church has for you, and we will email you a code. There is no password to remember.</p>
+    <div class="members" data-url="{{ m.supabaseUrl }}" data-key="{{ m.supabaseKey }}" data-bucket="{{ m.bucket }}" data-file="{{ m.file }}" data-download-name="{{ m.downloadName }}">
+      <form class="contact-form members-email">
+        <p class="field">
+          <label for="m-email">Your email address</label>
+          <input id="m-email" name="email" type="email" autocomplete="email" required>
+        </p>
+        <p><button class="button button-solid" type="submit">Email me a sign-in code</button></p>
+      </form>
+      <form class="contact-form members-code" hidden>
+        <p class="field">
+          <label for="m-code">Code from the email</label>
+          <input id="m-code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6,10}" maxlength="10" required>
+        </p>
+        <p class="button-row">
+          <button class="button button-solid" type="submit">Sign in</button>
+          <button class="button" type="button" data-action="restart">Use a different email</button>
+        </p>
+      </form>
+      <div class="members-in" hidden>
+        <p>Signed in as <strong class="members-who"></strong>.</p>
+        <p class="button-row">
+          <button class="button button-solid" type="button" data-action="download">Download the directory (PDF)</button>
+          <button class="button" type="button" data-action="signout">Sign out</button>
+        </p>
+        <p>Please keep the directory within the church: don’t forward it or post it anywhere.</p>
+      </div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </div>
+    <p>New to the church, or no code arriving? <a href="/contact/">Contact the pastor</a> to have your email added to the member list.</p>
+    {% else %}
+    <p>The member directory is not available online yet. Please ask the pastor for a copy.</p>
+    {% endif %}
+  </article>
+</div>
+<script src="/assets/js/members.js" defer></script>

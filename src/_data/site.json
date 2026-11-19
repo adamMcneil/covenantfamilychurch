@@ -27,6 +27,13 @@
     "action": "",
     "accessKey": ""
   },
+  "members": {
+    "supabaseUrl": "",
+    "supabaseKey": "",
+    "bucket": "members",
+    "file": "directory.pdf",
+    "downloadName": "Covenant Family Church directory.pdf"
+  },
   "social": {
     "facebook": "https://www.facebook.com/Covenant-Family-Church-341707822513407/",
     "youtube": "https://www.youtube.com/channel/UCgxGIBIWG2Z6cc4Iv2dxwoA",
