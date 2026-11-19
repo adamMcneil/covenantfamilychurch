@@ -26,7 +26,7 @@ One-time setup (menu names in the Supabase dashboard may differ slightly):
 
 1. Create a free Supabase account and a project (region East US). Note the **Project URL** and the **publishable key** (Project Settings → API Keys). Both are meant to be public; the bucket's rules are what protect the file.
 2. In the SQL Editor, run `supabase/setup.sql`. It creates the private `members` bucket, the members-only download rule, and the keepalive row.
-3. Authentication → Sign In / Providers: turn off **Allow new users to sign up**, and keep the Email provider on.
+3. Authentication → Sign In / Providers: turn off **Allow new users to sign up**, and keep the Email provider on. In the Email provider, set **Email OTP Length** to 8 and **Email OTP Expiration** to 900 seconds (15 minutes), so codes are harder to guess and stop working sooner. Invitation links use the same expiry; someone who opens theirs later just asks for a code on the page.
 4. Authentication → Emails → SMTP Settings: turn on custom SMTP with the church mailbox (IONOS: host `smtp.ionos.com`, port 587, the mailbox address and its password) and sender name "Covenant Family Church". Supabase's built-in sender only mails the project's own team.
 5. Authentication → Emails → Templates:
    - **Magic link**: subject "Your sign-in code for the Covenant Family Church directory", with `{{ .Token }}` in the body. The token is what makes it send a code instead of a link.
