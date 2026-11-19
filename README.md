@@ -31,6 +31,7 @@ One-time setup (menu names in the Supabase dashboard may differ slightly):
 5. Authentication → Emails → Templates:
    - **Magic link**: subject "Your sign-in code for the Covenant Family Church directory", with `{{ .Token }}` in the body. The token is what makes it send a code instead of a link.
    - **Invite user**: say they have been added to the member directory, with a link to `{{ .ConfirmationURL }}`.
+   - **Confirm signup**: also include `{{ .Token }}`. Someone invited who didn't use the invitation link within the hour gets this email, not the magic link one, the first time they ask for a code.
 6. Authentication → URL Configuration: set the Site URL to `https://adammcneil.github.io/covenantfamilychurch/members/` (`https://covenantfamilychurch.net/members/` after the domain move). Invitation links land there.
 7. Storage → `members`: upload the directory as `directory.pdf`.
 8. Put the Project URL and publishable key in `src/_data/site.json` under `members`, then push.
