@@ -1,6 +1,7 @@
 ---
 title: This Week at Covenant Family Church
 ---
+This is a test  
 ***11.8.26***
 
 Hello brothers and sisters,
@@ -17,7 +18,7 @@ Evening Sermon: [As for Us, the Lord Is Our God (2 Chronicles 13)](https://www.s
 
 **Blog Post**
 
-[What Is the Lord’s Supper?](https://www.forchristskingdom.com/2026/11/what-is-lords-supper.html)\
+[What Is the Lord’s Supper?](https://www.forchristskingdom.com/2026/11/what-is-lords-supper.html)  
 In this installment on the blog, I explain question 96 of the Shorter Catechism, which asks, “What is the Lord’s Supper?” It answers, “The Lord’s supper is a sacrament, wherein, by giving and receiving bread and wine according to Christ’s appointment, his death is showed forth; and the worthy receivers are, not after a corporal and carnal manner, but by faith, made partakers of his body and blood, with all his benefits, to their spiritual nourishment and growth in grace.”
 
 **Midweek Meeting**
@@ -30,28 +31,28 @@ Our annual Pilgrim Heritage Celebration will take place on the afternoon of Sund
 
 **Morning Worship Details**
 
-Hymns and Psalms\
-Psalm #105D “When Israel to Egypt Came”\
-Hymn #243 “Praise the Savior Now and Ever”\
-Hymn #71 “Stand Up, O God, Be Present Now”\
-Psalm #11 “My Trust Is in the LORD”\
+Hymns and Psalms  
+Psalm #105D “When Israel to Egypt Came”  
+Hymn #243 “Praise the Savior Now and Ever”  
+Hymn #71 “Stand Up, O God, Be Present Now”  
+Psalm #11 “My Trust Is in the LORD”  
 Hymn #74 “God Is Working His Purpose Out”
 
-Bible Texts, Sermon:\
-Old Testament Reading: Psalm 18:1-19\
-New Testament Reading: Ephesians 6:10-24\
+Bible Texts, Sermon:  
+Old Testament Reading: Psalm 18:1-19  
+New Testament Reading: Ephesians 6:10-24  
 Sermon: “Fire from the Altar” – Revelation 8
 
 **Evening Worship Details**
 
-Hymns and Psalms\
-Hymn #369 “Shout, for the Blessed Jesus Reigns”\
-Hymn #61 “O God, No Longer Hold Thy Peace”\
+Hymns and Psalms  
+Hymn #369 “Shout, for the Blessed Jesus Reigns”  
+Hymn #61 “O God, No Longer Hold Thy Peace”  
 Psalm #76A “God the Lord Is Known in Judah”
 
-Bible Texts, Sermon:\
-Old Testament Reading: Deuteronomy 12:1-14\
-New Testament Reading: TBA\
+Bible Texts, Sermon:  
+Old Testament Reading: Deuteronomy 12:1-14  
+New Testament Reading: TBA  
 Sermon: “Asa’s Faith in Peace and War” – 2 Chronicles 14
 
 —
