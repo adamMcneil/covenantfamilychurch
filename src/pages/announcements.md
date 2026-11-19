@@ -1,7 +1,6 @@
 ---
 title: This Week at Covenant Family Church
 ---
-This is a test  
 ***11.8.26***
 
 Hello brothers and sisters,
