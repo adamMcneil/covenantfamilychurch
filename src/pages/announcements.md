@@ -1,8 +1,5 @@
 ---
-title: "This Week at Covenant Family Church"
-date: 2019-01-16T10:41:39
-modified: 2026-11-05T10:02:01
-wpId: 3079
+title: This Week at Covenant Family Church
 ---
 ***11.8.26***
 

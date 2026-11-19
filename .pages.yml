@@ -1,0 +1,39 @@
+# Pages CMS (https://app.pagescms.org): the web editor the pastor uses for the
+# weekly announcements. Editors see only what is listed under `content`, and
+# each Save is a commit to main, which redeploys the site in about a minute.
+# Setup and inviting an editor: README.md, "Announcements editor".
+
+media:
+  - name: announcements
+    label: Announcement images
+    input: src/wp-content/uploads/announcements
+    output: /wp-content/uploads/announcements
+    categories: [image]
+    # Lowercase file names without spaces: a space breaks a Markdown image link.
+    rename: safe
+
+content:
+  - name: announcements
+    label: Announcements
+    type: file
+    path: src/pages/announcements.md
+    format: yaml-frontmatter
+    fields:
+      # Pages CMS rewrites the front matter from these fields only, and it can't
+      # re-read a file whose front matter is empty, so keep `title` here. The
+      # page's other data is in src/pages/announcements.11tydata.js.
+      - name: title
+        label: Page title
+        type: string
+        required: true
+        description: Shown at the top of the announcements page. Usually leave it as it is.
+      - name: body
+        label: This week's announcements
+        type: rich-text
+        description: >-
+          Put the date on the first line by itself (for example 11.15.26). The home
+          page shows it as "Posted 11.15.26", with the first full paragraph. Use the
+          image button to add a flyer. When you save, the website updates in about a minute.
+        options:
+          format: markdown
+          media: announcements

@@ -4,13 +4,27 @@ The website of Covenant Family Church (OPC, Wentzville, MO), rebuilt as a static
 
 All 169 posts and 25 pages from the old site are here, at the same addresses (`/sunday/`, `/the-lords-supper-its-proper-recipients-1-corinthians/`, `/category/rev-serven/page/2/`, `/2009/03/`, …), so old links and search results keep working after the domain moves.
 
+## Announcements editor
+
+The pastor updates the weekly announcements in [Pages CMS](https://app.pagescms.org), a free web editor for sites stored on GitHub. It looks like a word processor, it does not need a GitHub account, and it shows him only the announcements. Each **Save** is a commit to `main`, so the site redeploys in about a minute. What the editor shows is set in `.pages.yml`.
+
+One-time setup (repository owner):
+
+1. Go to [app.pagescms.org](https://app.pagescms.org), sign in with GitHub, and install the Pages CMS GitHub App when asked, giving it access to this repository only.
+2. Open the repository there and check the **Announcements** entry opens and shows this week's text.
+3. In the repository's **Collaborators** settings in Pages CMS, invite the pastor's email address. He signs in with that address; Pages CMS emails him a code. No GitHub account or password is involved.
+
+What he does each week: open app.pagescms.org, choose **Announcements**, replace last week's text (the date goes on the first line by itself, as on the old site), and save. Photos and flyers go in with the image button and are stored in `src/wp-content/uploads/announcements/`.
+
+If a save doesn't show up on the site within a few minutes, the build failed: GitHub emails the repository owner, and the **Actions** tab shows why. The editor only manages `src/pages/announcements.md`'s title and text; the page's other data is in `src/pages/announcements.11tydata.js`, because Pages CMS rewrites the front matter from its form and drops anything else.
+
 ## Common edits
 
 You can make all of these in the GitHub web editor (open the file, click the pencil, then **Commit changes**). The site redeploys on its own.
 
 | To change | Edit |
 | --- | --- |
-| This week's announcements | `src/pages/announcements.md` (the home page shows its date line and first paragraph) |
+| This week's announcements | The [announcements editor](#announcements-editor), or `src/pages/announcements.md` (the home page shows its date line and first paragraph) |
 | Service times, meeting place, phone, email, social links | `src/_data/site.json` (used by the home page, the Sunday page, and the footer) |
 | Top menu | `src/_data/nav.json` |
 | Footer text | `src/_data/footer.json` |
@@ -70,10 +84,10 @@ Search is [Pagefind](https://pagefind.app/), which indexes the built site, so it
 
 ## Re-importing from WordPress
 
-`scripts/import-wordpress.mjs` is what converted the old site. While the WordPress site is still up, you can pull a page or post again, for example after this week's announcements are posted there:
+`scripts/import-wordpress.mjs` is what converted the old site. While the WordPress site is still up, you can pull a page or post again by its slug:
 
 ```sh
-npm run import -- --only announcements
+npm run import -- --only ministries
 ```
 
-Re-importing overwrites that file, so hand edits to it are lost. Without `--only` it re-imports everything; some pages were tidied by hand after the import (Leadership's headings, the Truth, Vision and Roots titles), so prefer `--only`.
+Don't re-import `announcements`: it is now written in the announcements editor, not WordPress. Re-importing overwrites that file, so hand edits to it are lost. Without `--only` it re-imports everything; some pages were tidied by hand after the import (Leadership's headings, the Truth, Vision and Roots titles), so prefer `--only`.
