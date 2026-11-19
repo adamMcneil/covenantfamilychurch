@@ -13,6 +13,7 @@ features:
   - url: /roots/
     label: Roots
     image: /wp-content/uploads/2019/01/FS-rooted.jpg
+    focus: 20% 50%   # keeps the seedling in view when a phone crops the photo
 ---
 <section class="hero">
   <img class="hero-bg" src="/wp-content/uploads/2019/01/FS-bible11.jpg" alt="" width="960" height="331">
@@ -40,16 +41,33 @@ features:
   </div>
 </section>
 
-<section class="triptych wrap" aria-label="Who we are">
-  {% for f in features %}
-  {% set p = collections.all | findByUrl(f.url) %}
-  <article class="feature">
-    <a class="feature-image" href="{{ f.url }}" tabindex="-1" aria-hidden="true"><img src="{{ f.image }}" alt="" loading="lazy" width="960" height="331"></a>
-    <h2><a href="{{ f.url }}">{{ f.label }}</a></h2>
-    <p>{{ p | summary(42) }}</p>
-    <p class="feature-more"><a href="{{ f.url }}">Read more<span class="visually-hidden"> about our {{ f.label | lower }}</span></a></p>
-  </article>
-  {% endfor %}
+{# Truth / Vision / Roots as a photo slider, after the old site's front-page slider.
+   Swiping works on its own; site.js adds the arrows and dots. #}
+<section class="slider" aria-roledescription="carousel" aria-label="Who we are">
+  <div class="wrap">
+    <div class="slider-frame">
+      <div class="slider-track" id="slider-track">
+        {% for f in features %}
+        {% set p = collections.all | findByUrl(f.url) %}
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="{{ f.label }} ({{ loop.index }} of {{ features.length }})">
+          <img class="slide-image" src="{{ f.image }}" alt="" width="960" height="331"{% if f.focus %} style="object-position: {{ f.focus }}"{% endif %}>
+          <div class="slide-caption">
+            <h2><a href="{{ f.url }}">{{ f.label }}</a></h2>
+            <p>{{ p | summary(30) }}</p>
+            <p class="slide-more"><a class="button button-ghost" href="{{ f.url }}">Read more<span class="visually-hidden"> about our {{ f.label | lower }}</span></a></p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      <button class="slider-arrow slider-prev" type="button" aria-controls="slider-track" aria-label="Previous slide"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="slider-arrow slider-next" type="button" aria-controls="slider-track" aria-label="Next slide"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="slider-dots">
+      {% for f in features %}
+      <button class="slider-dot" type="button" aria-controls="slider-track" aria-label="Show {{ f.label }}" aria-current="{{ 'true' if loop.first else 'false' }}"></button>
+      {% endfor %}
+    </div>
+  </div>
 </section>
 
 <section class="welcome">

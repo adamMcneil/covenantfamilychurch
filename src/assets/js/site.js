@@ -38,6 +38,35 @@
       item.classList.remove('is-open');
       item.querySelector('.submenu-toggle')?.setAttribute('aria-expanded', 'false');
     });
+    if (nav?.classList.contains('is-open')) {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    }
+  });
+
+  // Home page slider: arrows and dots move the strip (it already swipes), and wrap around like the old site's.
+  document.querySelectorAll('.slider').forEach(slider => {
+    const track = slider.querySelector('.slider-track');
+    const slides = [...track.querySelectorAll('.slide')];
+    const dots = [...slider.querySelectorAll('.slider-dot')];
+    const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let current = 0;
+    const show = i => {
+      const n = (i + slides.length) % slides.length;
+      track.scrollTo({ left: slides[n].offsetLeft, behavior: smooth ? 'smooth' : 'auto' });
+    };
+    slider.querySelector('.slider-prev')?.addEventListener('click', () => show(current - 1));
+    slider.querySelector('.slider-next')?.addEventListener('click', () => show(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+    const seen = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        current = slides.indexOf(e.target);
+        dots.forEach((d, i) => d.setAttribute('aria-current', String(i === current)));
+      });
+    }, { root: track, threshold: 0.6 });
+    slides.forEach(s => seen.observe(s));
   });
 
   // Photo album lightbox

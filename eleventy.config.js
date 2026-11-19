@@ -52,7 +52,8 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ 'src/wp-content': 'wp-content' });
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
-  eleventyConfig.addPassthroughCopy({ 'src/favicon.svg': 'favicon.svg' });
+  // Browser and home-screen icons live at the site root, where browsers look for them.
+  eleventyConfig.addPassthroughCopy({ 'src/icons/*': '/' });
   eleventyConfig.addPassthroughCopy({ 'src/.nojekyll': '.nojekyll' });
 
   eleventyConfig.amendLibrary('md', md => md.set({ html: true, breaks: false, linkify: false, typographer: false }));
