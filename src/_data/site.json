@@ -24,8 +24,8 @@
   ],
   "audioBase": "https://download.covenantfamilychurch.net/",
   "contactForm": {
-    "action": "",
-    "accessKey": ""
+    "action": "https://api.web3forms.com/submit",
+    "accessKey": "3225989b-60a9-4b3e-833e-674679d621ec"
   },
   "members": {
     "supabaseUrl": "",

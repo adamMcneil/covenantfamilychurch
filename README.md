@@ -75,13 +75,14 @@ Images go in `src/wp-content/uploads/` (the old WordPress paths are kept so old 
 
 ## Contact form
 
-The form on `/contact/` (and on the Men's Advance and Pilgrim Heritage pages) sends its message through [Web3Forms](https://web3forms.com), a free service (250 messages a month, no account) that emails each message to one inbox. The email's subject is "Message from the Covenant Family Church website", and **Reply** goes to the visitor. Until `contactForm` in `src/_data/site.json` is filled in, pressing **Send message** opens the visitor's email app instead, with the message addressed to the email in `site.json`.
+The form on `/contact/` (and on the Men's Advance and Pilgrim Heritage pages) sends its message through [Web3Forms](https://web3forms.com), a free service (250 messages a month) that emails each message to the inbox of the Web3Forms account that owns the form. The email's subject is "Message from the Covenant Family Church website", and **Reply** goes to the visitor. Sent messages are also kept in that account's dashboard at [app.web3forms.com](https://app.web3forms.com). If `contactForm` in `src/_data/site.json` is ever emptied, pressing **Send message** opens the visitor's email app instead, with the message addressed to the email in `site.json`.
 
-Setting it up, or changing which inbox gets the messages:
+To send the messages to a different inbox:
 
-1. On [web3forms.com](https://web3forms.com), enter the address that should receive the messages and press **Create Access Key**. The key is emailed to that address, so whoever reads that inbox has to pass it on.
-2. In `src/_data/site.json`, set `contactForm` to `"action": "https://api.web3forms.com/submit"` and `"accessKey": "<the key>"`, then push. The key is meant to be public; it only lets the form send to that one inbox.
-3. Send yourself a test message from `/contact/` once the site has redeployed.
+1. Sign in at [app.web3forms.com](https://app.web3forms.com) with the address that should receive them. It asks you to tick a "Verify you are human" box and emails you a sign-in code; signing in the first time creates the account.
+2. Create a form (any name; the website address is the contact page). The next page shows its **Form Access Key**.
+3. Put that key in `src/_data/site.json` as `contactForm.accessKey` (keep `"action": "https://api.web3forms.com/submit"`), then push. The key is meant to be public; it only lets the form send to that one inbox.
+4. Send yourself a test message from `/contact/` once the site has redeployed.
 
 Web3Forms only accepts messages sent from a visitor's browser, so it can't be tested with `curl`. If a message doesn't go through, the form tells the visitor to use the email in `site.json` instead.
 
