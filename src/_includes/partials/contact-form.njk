@@ -26,6 +26,10 @@
     <label for="cf-hp">Leave this empty</label>
     <input id="cf-hp" name="botcheck" tabindex="-1" autocomplete="off">
   </p>
+  {% if site.contactForm.action and site.contactForm.hcaptchaSiteKey %}
+  <div class="field h-captcha" data-sitekey="{{ site.contactForm.hcaptchaSiteKey }}"></div>
+  <script src="https://js.hcaptcha.com/1/api.js?recaptchacompat=off" async defer></script>
+  {% endif %}
   <p><button class="button button-solid" type="submit">Send message</button></p>
   <p class="form-status" role="status" aria-live="polite"></p>
 </form>

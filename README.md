@@ -86,6 +86,8 @@ To send the messages to a different inbox:
 
 Web3Forms only accepts messages sent from a visitor's browser, so it can't be tested with `curl`. If a message doesn't go through, the form tells the visitor to use the email in `site.json` instead.
 
+**Spam protection.** Visitors tick an hCaptcha "I am human" box before sending. The box only appears when `contactForm.hcaptchaSiteKey` is set; `50b2fe65-b00b-4b9e-ad62-3ba471098be2` is the shared key Web3Forms gives free accounts. Spam bots don't need the page (the access key is public), so the check that matters happens at Web3Forms: in the form's settings at [app.web3forms.com](https://app.web3forms.com), hCaptcha must be chosen as the spam protection. With that on, Web3Forms rejects any message without a ticked box. Turn it on after deploying a page with the box, or real messages are rejected in between. A form made for a new inbox needs it turned on again.
+
 ## Sermon audio
 
 The old sermon recordings (about 100 MP3s from 2008–2010, roughly 1.5 GB) are still hosted at `download.covenantfamilychurch.net`, which is on the same hosting account as the old WordPress site. Each sermon post plays its file from there. Before that hosting is cancelled, move the files somewhere else (for example SermonAudio, archive.org, or a storage bucket), keeping the same `2009/…mp3` folder layout, and change `audioBase` in `src/_data/site.json` to the new location.

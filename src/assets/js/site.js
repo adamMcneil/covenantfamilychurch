@@ -110,6 +110,15 @@
         return;
       }
 
+      const captcha = form.querySelector('.h-captcha');
+      if (captcha && !data.get('h-captcha-response')) {
+        status.classList.add('is-error');
+        status.textContent = window.hcaptcha
+          ? 'Please tick the “I am human” box before sending.'
+          : `The spam check did not load. Please reload the page, or email ${form.dataset.mailto} directly.`;
+        return;
+      }
+
       data.set('name', name);
       ['first_name', 'last_name', 'botcheck'].forEach(field => data.delete(field));
       const button = form.querySelector('button[type="submit"]');
@@ -126,6 +135,7 @@
         status.textContent = `The message did not send. Please try again, or email ${form.dataset.mailto} directly.`;
       } finally {
         button.disabled = false;
+        if (captcha) window.hcaptcha?.reset();
       }
     });
   });
