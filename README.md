@@ -75,12 +75,15 @@ Images go in `src/wp-content/uploads/` (the old WordPress paths are kept so old 
 
 ## Contact form
 
-The form on `/contact/` (and on the Men's Advance and Pilgrim Heritage pages) works now: when someone presses **Send message**, their email app opens with the message filled in, addressed to the email in `site.json`.
+The form on `/contact/` (and on the Men's Advance and Pilgrim Heritage pages) sends its message through [Web3Forms](https://web3forms.com), a free service (250 messages a month, no account) that emails each message to one inbox. The email's subject is "Message from the Covenant Family Church website", and **Reply** goes to the visitor. Until `contactForm` in `src/_data/site.json` is filled in, pressing **Send message** opens the visitor's email app instead, with the message addressed to the email in `site.json`.
 
-To have the form send email directly instead, sign up for a free form service and put its details in `src/_data/site.json` under `contactForm`:
+Setting it up, or changing which inbox gets the messages:
 
-- **Web3Forms**: enter the address that should receive messages at web3forms.com to get an access key, then set `"action": "https://api.web3forms.com/submit"` and `"accessKey": "<your key>"`.
-- **Formspree**: create a form at formspree.io, then set `"action": "https://formspree.io/f/<form id>"` and leave `accessKey` empty.
+1. On [web3forms.com](https://web3forms.com), enter the address that should receive the messages and press **Create Access Key**. The key is emailed to that address, so whoever reads that inbox has to pass it on.
+2. In `src/_data/site.json`, set `contactForm` to `"action": "https://api.web3forms.com/submit"` and `"accessKey": "<the key>"`, then push. The key is meant to be public; it only lets the form send to that one inbox.
+3. Send yourself a test message from `/contact/` once the site has redeployed.
+
+Web3Forms only accepts messages sent from a visitor's browser, so it can't be tested with `curl`. If a message doesn't go through, the form tells the visitor to use the email in `site.json` instead.
 
 ## Sermon audio
 

@@ -111,13 +111,14 @@
       }
 
       data.set('name', name);
-      data.delete('botcheck');
+      ['first_name', 'last_name', 'botcheck'].forEach(field => data.delete(field));
       const button = form.querySelector('button[type="submit"]');
       button.disabled = true;
       status.textContent = 'Sending…';
       try {
         const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-        if (!res.ok) throw new Error(String(res.status));
+        const reply = await res.json().catch(() => ({}));
+        if (!res.ok || reply.success === false) throw new Error(reply.message || String(res.status));
         form.reset();
         status.textContent = 'Message sent. Thank you, we will be in touch soon.';
       } catch {
