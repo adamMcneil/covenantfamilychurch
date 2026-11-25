@@ -87,7 +87,7 @@
     <div class="wrap footer-base">
       <div class="footer-contact">
         <p><strong>Sunday worship</strong> at {{ site.meetingPlace.name }}, {{ site.meetingPlace.street }}, {{ site.meetingPlace.city }}</p>
-        <p>Mail: {{ site.mailingAddress | join(", ") }} &nbsp; Phone: <a href="{{ site.phoneHref }}">{{ site.phone }}</a></p>
+        <p>Mail: {{ site.mailingAddress | join(", ") }} &nbsp; Phone: {{ site.phone }}</p>
       </div>
       <ul class="footer-social">
         <li><a href="{{ site.social.facebook }}">Facebook</a></li>

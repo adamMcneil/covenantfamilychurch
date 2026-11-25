@@ -50,7 +50,7 @@ You can make all of these in the GitHub web editor (open the file, click the pen
 | To change | Edit |
 | --- | --- |
 | This week's announcements | The [announcements editor](#announcements-editor), or `src/pages/announcements.md` (the home page shows its date line and first paragraph) |
-| Service times, meeting place, phone, email, social links | `src/_data/site.json` (used by the home page, the Sunday page, and the footer) |
+| Service times, meeting place, phone, email, social links | `src/_data/site.json` (used by the home page, the Sunday page, and the footer). `phone` is the church number from its Google listing, shown as plain text in the footer; `pastorPhoneHref` is the number the "Call" and "phone" links dial |
 | Top menu | `src/_data/nav.json` |
 | Footer text | `src/_data/footer.json` |
 | Any other page | `src/pages/<address>.md` (for example `src/pages/leadership.md` is `/leadership/`) |
