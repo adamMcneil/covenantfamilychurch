@@ -123,9 +123,6 @@ export default function (eleventyConfig) {
     return [...seen.values()];
   });
 
-  eleventyConfig.addCollection('photoAlbum', api =>
-    allPosts(api).filter(p => (p.data.categories || []).includes('photos') && p.data.image));
-
   // ----- Filters -----
 
   eleventyConfig.addFilter('displayDate', d => fmt(d, { month: 'long', day: 'numeric', year: 'numeric' }));

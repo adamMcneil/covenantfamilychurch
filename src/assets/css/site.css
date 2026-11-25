@@ -493,7 +493,7 @@ h4 { font-size: 1.2rem; font-weight: 600; }
   .welcome-card > p:nth-of-type(2) { margin-top: .9rem; }
 }
 
-/* ---------- Home: this week + album ---------- */
+/* ---------- Home: this week ---------- */
 
 .this-week {
   display: grid;
@@ -508,33 +508,6 @@ h4 { font-size: 1.2rem; font-weight: 600; }
 @media (max-width: 40rem) {
   .this-week { grid-template-columns: minmax(0, 1fr); }
   .this-week-paper { display: none; }
-}
-
-.album { border-top: 1px solid var(--rule); padding-block: clamp(3rem, 6vw, 4.5rem); }
-.album h2 { margin-top: 0; }
-.album-grid {
-  list-style: none; margin: 1.5rem 0 0; padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: .75rem;
-}
-@media (max-width: 40rem) { .album-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.album-photo { display: block; aspect-ratio: 1; overflow: hidden; background: var(--stone); }
-.album-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
-.album-photo:hover img { transform: scale(1.04); }
-
-.lightbox {
-  border: 0; padding: 0; background: var(--navy-deep); color: #fff;
-  max-width: min(64rem, 94vw); max-height: 92vh;
-}
-.lightbox::backdrop { background: rgba(14,20,38,.82); }
-.lightbox img { display: block; max-width: 100%; max-height: 75vh; margin: 0 auto; }
-.lightbox-caption { margin: 0; padding: 1rem 1.25rem 1.25rem; font-style: italic; font-size: 1.15rem; }
-.lightbox-caption a { color: #fff; font-family: var(--sans); font-style: normal; font-size: 1rem; margin-left: .5rem; }
-.lightbox-close {
-  position: absolute; top: .4rem; right: .5rem;
-  font-size: 2rem; line-height: 1; color: #fff; background: rgba(0,0,0,.35);
-  border: 0; width: 2.5rem; height: 2.5rem; cursor: pointer;
 }
 
 /* ---------- Inner pages ---------- */

@@ -69,29 +69,6 @@
     slides.forEach(s => seen.observe(s));
   });
 
-  // Photo album lightbox
-  const dialog = document.querySelector('.lightbox');
-  if (dialog && typeof dialog.showModal === 'function') {
-    const img = dialog.querySelector('img');
-    const caption = dialog.querySelector('.lightbox-caption');
-    document.querySelectorAll('.album-photo').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        img.src = link.href;
-        img.alt = link.dataset.caption || '';
-        caption.textContent = link.dataset.caption || '';
-        if (link.dataset.post) {
-          const a = document.createElement('a');
-          a.href = link.dataset.post;
-          a.textContent = 'View post';
-          caption.append(' ', a);
-        }
-        dialog.showModal();
-      });
-    });
-    dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
-  }
-
   // Contact form: posts to the configured form service, or falls back to
   // opening the visitor's email app when no service is set up yet.
   document.querySelectorAll('.contact-form').forEach(form => {

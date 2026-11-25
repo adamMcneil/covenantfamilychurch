@@ -110,25 +110,3 @@ features:
     <p><a class="button" href="/announcements/">Read this week’s announcements</a></p>
   </div>
 </section>
-
-{% if collections.photoAlbum.length %}
-<section class="album">
-  <div class="wrap">
-    <h2>Covenant Family photo album</h2>
-    <ul class="album-grid">
-      {% for p in collections.photoAlbum %}
-      <li>
-        <a class="album-photo" href="{{ p.data.image }}" data-caption="{{ p.data.title }}" data-post="{{ p.url | htmlBaseUrl }}">
-          <img src="{{ p.data.image | thumb(400) }}" alt="{{ p.data.title }}" loading="lazy">
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-  <dialog class="lightbox" aria-label="Photo">
-    <form method="dialog"><button class="lightbox-close" aria-label="Close photo">&times;</button></form>
-    <img src="" alt="">
-    <p class="lightbox-caption"></p>
-  </dialog>
-</section>
-{% endif %}
