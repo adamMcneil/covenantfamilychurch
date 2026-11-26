@@ -43,6 +43,14 @@ Running it:
 - **New directory**: upload it to the `members` bucket as `directory.pdf`, replacing the old one.
 - **Keeping it awake**: Supabase pauses free projects after a week without activity, so `.github/workflows/supabase-keepalive.yml` reads a row twice a week. If the project pauses anyway, restore it from the Supabase dashboard. GitHub turns scheduled workflows off after 60 days without commits; the weekly announcements keep it on.
 
+## Previews
+
+A branch can be looked at on the real site before it is merged: the deploy also builds each branch named in `PREVIEW_BRANCHES` in `.github/workflows/deploy.yml` into `/preview/<branch>/`, for example https://adammcneil.github.io/covenantfamilychurch/preview/tabler-icons/. Search engines are asked not to index previews, and each preview page names the real page as its original.
+
+- **Add or remove a preview**: edit `PREVIEW_BRANCHES` on `main` and push.
+- **Update a preview after pushing to its branch**: run the deploy again (Actions → Deploy to GitHub Pages → Run workflow, or `gh workflow run deploy.yml`). A push to a preview branch doesn't redeploy by itself, because only `main` may publish the site.
+- A preview that fails to build is skipped with a warning in the run; the main site still deploys.
+
 ## Common edits
 
 You can make all of these in the GitHub web editor (open the file, click the pencil, then **Commit changes**). The site redeploys on its own.
