@@ -47,7 +47,7 @@ Running it:
 
 A branch can be looked at on the real site before it is merged: the deploy also builds each branch named in `PREVIEW_BRANCHES` in `.github/workflows/deploy.yml` into `/preview/<branch>/`, for example https://adammcneil.github.io/covenantfamilychurch/preview/tabler-icons/. Search engines are asked not to index previews, and each preview page names the real page as its original.
 
-A **Version** picker at the bottom of the page switches between the current site and each preview, staying on the same page. It always shows on previews; on the main site it shows only in a browser that has opened a preview (or with `?preview` added to the address), so ordinary visitors don't see it, and its × hides it again. It lives in `.github/previews/`, and the deploy adds it to every page.
+A **Version** picker at the bottom of the page switches between the current site and each preview, staying on the same page. It shows on every page, the main site included, for everyone. It lives in `.github/previews/`, and the deploy adds it to every page.
 
 - **Add or remove a preview**: edit `PREVIEW_BRANCHES` on `main` (the branch name, then the label the picker shows) and push.
 - **Update a preview after pushing to its branch**: run the deploy again (Actions → Deploy to GitHub Pages → Run workflow, or `gh workflow run deploy.yml`). A push to a preview branch doesn't redeploy by itself, because only `main` may publish the site.
