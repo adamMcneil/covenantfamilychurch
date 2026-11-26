@@ -4,8 +4,6 @@ date: 2019-01-08T04:17:06
 modified: 2026-08-13T17:01:43
 wpId: 2493
 ---
-<figure class="figure alignright"><img src="/wp-content/uploads/2019/01/distinctives.png" alt="" width="400" height="262" loading="lazy"></figure>
-
 We are not like all the other churches in town. To describe what makes us unique as a church, let us take a closer look at two phrases we use to describe our church: “Orthodox Presbyterian” (our denomination’s name) and “Covenant Family” (our church’s name).
 
 ## We Are Orthodox

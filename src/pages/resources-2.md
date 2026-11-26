@@ -4,8 +4,6 @@ date: 2019-01-08T04:19:20
 modified: 2025-01-08T10:34:59
 wpId: 2509
 ---
-<figure class="figure alignright"><img src="/wp-content/uploads/2019/01/library.png" alt="" width="400" height="245" loading="lazy"></figure>
-
 While modern technology has become a worldly distraction to many people, it can also be used for good.
 
 We are thankful for the rich abundance of Bible-related resources that are available online and we would here direct you to some of our favorites.

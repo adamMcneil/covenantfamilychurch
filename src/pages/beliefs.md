@@ -5,8 +5,6 @@ modified: 2024-09-21T15:18:58
 image: "/wp-content/uploads/2019/01/beliefs-1.png"
 wpId: 2478
 ---
-<figure class="figure alignright"><img src="/wp-content/uploads/2019/01/beliefs-1.png" alt="" width="400" height="263" loading="lazy"></figure>
-
 The church of the living God is “a pillar and buttress of the truth” (1 Tim. 3:15). Accordingly, we seek to keep the [orthodox](/distinctives/) faith in its purity.
 
 We base our beliefs on the Bible, which is the inerrant Word of God, the supreme standard over all human authorities.

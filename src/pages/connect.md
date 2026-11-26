@@ -4,8 +4,6 @@ date: 2019-01-08T05:39:08
 modified: 2026-09-18T16:53:56
 wpId: 2606
 ---
-<figure class="figure"><img src="/wp-content/uploads/2019/01/connect.png" alt="" width="232" height="117" loading="lazy"></figure>
-
 **Talk with our Pastor**
 
 His name is Peter, he is very approachable, and would be happy to spend some time speaking with you today.

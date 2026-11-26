@@ -5,8 +5,6 @@ modified: 2020-08-14T09:36:18
 image: "/wp-content/uploads/2019/01/FS-bible11.jpg"
 wpId: 2669
 ---
-<figure class="figure alignright"><img src="/wp-content/uploads/2019/01/bible_compass.png" alt="" width="445" height="293" loading="lazy"></figure>
-
 As our [denomination’s name](http://opc.org/) indicates, we seek to keep the orthodox faith in all its purity. We base our beliefs on the Bible alone, which is the inerrant Word of God, the supreme standard over all human authorities.
 
 The teachings of scripture have been held, defended, and articulated for two thousand years since the Bible was completed, especially by the Reformers of the 16th and 17th centuries, and we eagerly seek to carry on this faith into future generations.

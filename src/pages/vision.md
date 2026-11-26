@@ -5,8 +5,6 @@ modified: 2022-01-05T11:26:54
 image: "/wp-content/uploads/2019/01/SL-family.jpg"
 wpId: 2556
 ---
-<figure class="figure alignright"><img src="/wp-content/uploads/2019/01/generations.png" alt="" width="453" height="289" loading="lazy"></figure>
-
 ## Covenant Family:
 
 ## A Vision for Church and Family

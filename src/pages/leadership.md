@@ -4,8 +4,6 @@ date: 2019-01-08T04:18:03
 modified: 2026-09-03T15:24:13
 wpId: 2523
 ---
-<figure class="figure alignright"><img src="/wp-content/uploads/2019/01/compass.png" alt="" width="400" height="264" loading="lazy"></figure>
-
 The word “presbyterian” comes from the Greek word for elder. We are led and governed by a plurality of elders (Acts 14:23) who along with deacons are elected by the congregation and ordained by other elders (Acts 6:1-6, 14:23, 1 Tim. 4:14). We refer to the local elders as the session.
 
 These elders also meet with the elders of other churches to lead and govern the church on regional and denominational levels (Acts 15).

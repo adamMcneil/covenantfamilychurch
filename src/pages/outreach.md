@@ -4,8 +4,6 @@ date: 2019-01-08T04:18:53
 modified: 2026-08-13T17:05:06
 wpId: 2506
 ---
-<figure class="figure alignright"><img src="/wp-content/uploads/2019/01/neighbors.png" alt="" width="400" height="264" loading="lazy"></figure>
-
 We are committed to reaching out to all the members of our community with the message of God’s Word.
 
 Therefore, don’t be surprised if you meet one of members and they end up inviting you to church.

@@ -18,12 +18,6 @@ Otherwise, here are some quick links to help you along the way:
 
 </div>
 
-<div class="column">
-
-<figure class="figure"><img src="/wp-content/uploads/2019/01/bible_laptop.png" alt="" width="400" loading="lazy"></figure>
-
-</div>
-
 </div>
 
 <div class="columns">

@@ -4,8 +4,6 @@ date: 2019-01-08T04:17:21
 modified: 2023-07-15T10:19:50
 wpId: 2560
 ---
-<figure class="figure alignright"><img src="/wp-content/uploads/2019/01/hourglass.png" alt="" width="400" height="262" loading="lazy"></figure>
-
 The history of our church extends far beyond the organization of our local congregation, for we are an extension of the church which has existed since God promised redemption to Adam and Eve.
 
 We find this visible church throughout all ages, consisting of those who believe in the promised redemption found in Christ and their children, identified by circumcision in the old covenant and by baptism in the new covenant.

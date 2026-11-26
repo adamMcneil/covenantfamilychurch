@@ -4,8 +4,6 @@ date: 2019-01-08T04:19:42
 modified: 2020-05-08T15:28:52
 wpId: 2498
 ---
-<figure class="figure alignright"><img src="/wp-content/uploads/2019/01/pulpit.png" alt="" width="400" height="264" loading="lazy"></figure>
-
 Jesus uses Scripture to convert and edify His people as it is read privately and publicly, but especially as it is proclaimed and explained by preachers, who serve as His ambassadors (2 Corinthians 5:20, Nehemiah 8:7-8, Romans 10:14-15).
 
 It is a blessing that it is so easy in this modern day to record and share sermons. We hope the messages below help you to grow in the knowledge of Christ.

@@ -55,7 +55,7 @@ You can make all of these in the GitHub web editor (open the file, click the pen
 | Footer text | `src/_data/footer.json` |
 | Any other page | `src/pages/<address>.md` (for example `src/pages/leadership.md` is `/leadership/`) |
 | Home page layout | `src/index.njk` |
-| Decorative pictures (the gold icons on navy on the home page and beside page text) | `scripts/icon-art.mjs`, then run `npm run icon-art`. Each picture is one icon from [Tabler Icons](https://tabler.io/icons) (MIT license; the icons used and the license are in `scripts/icons/`), saved over the old image address it replaces in `src/wp-content/uploads/2019/01/`, so old links and social previews keep working. The script also writes the home page hero pattern, `src/assets/img/hero-icons.svg` |
+| Home page pictures (the gold icons on navy in the slides, the Visit/Listen/Connect cards and the announcements link) | `scripts/icon-art.mjs`, then run `npm run icon-art`. Each picture is one icon from [Tabler Icons](https://tabler.io/icons) (MIT license; the icons used and the license are in `scripts/icons/`), saved over the old image address it replaces in `src/wp-content/uploads/2019/01/`, so old links and social previews keep working. Other pages have no pictures |
 | Sunday and Contact pages | `src/sunday.njk`, `src/contact.njk` |
 
 Pages and posts are Markdown with a short header. A new post is a new file in `src/posts/`; its file name becomes its address:

@@ -4,8 +4,6 @@ date: 2019-01-09T11:39:59
 modified: 2024-02-06T11:24:26
 wpId: 3098
 ---
-<figure class="figure alignright"><img src="/wp-content/uploads/2019/01/worship.png" alt="" width="400" height="263" loading="lazy"></figure>
-
 We were created to worship God.
 
 Worship gives unity to our lives, putting God at the center.

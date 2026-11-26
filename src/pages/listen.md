@@ -4,8 +4,6 @@ date: 2019-01-08T05:28:43
 modified: 2019-05-10T13:59:14
 wpId: 2596
 ---
-<figure class="figure"><img src="/wp-content/uploads/2019/01/listen_sermon.png" alt="" width="232" height="117" loading="lazy"></figure>
-
 **God’s Word changes lives.**
 
 That is why we spend so much of our time reading it, studying it, and hearing it preached.

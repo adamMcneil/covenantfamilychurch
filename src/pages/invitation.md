@@ -4,8 +4,6 @@ date: 2019-01-08T04:17:36
 modified: 2019-03-02T10:58:44
 wpId: 2471
 ---
-<figure class="figure alignright"><img src="/wp-content/uploads/2019/01/searching.png" alt="" width="400" height="263" loading="lazy"></figure>
-
 What are you seeking?
 
 Do you seek love and relationships in the midst of a commercialized world?

@@ -3,7 +3,6 @@ title: "Why do you worship as you do?"
 date: 2019-01-04T12:53:26
 author: "peterjb"
 categories: ["faq", "worship"]
-image: "/wp-content/uploads/2019/01/faq_worship.png"
 excerpt: "All true worship must be regulated by Scripture . This means that we worship according to the Bible: “the acceptable way of worshipping the true God is instituted by Himself, and so limited by his own revealed will, that he may not be worshipped according to the imaginations and devices of men, or the suggestions"
 wpId: 2545
 ---

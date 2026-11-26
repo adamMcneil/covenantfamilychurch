@@ -1,11 +1,12 @@
-// Makes the site's decorative pictures from Tabler Icons (https://tabler.io/icons, MIT license,
+// Makes the home page's pictures (the slides, the three welcome cards and the announcements
+// link) from Tabler Icons (https://tabler.io/icons, MIT license,
 // copies and license in scripts/icons/) and saves them over the old WordPress image addresses,
-// replacing the stock photos the old site used there. Run with `npm run icon-art`.
+// replacing the stock photos the old site used there. Other pages have no pictures. Run with `npm run icon-art`.
 //
 // Each picture is one gilt icon on the navy of the site's header. To change one, pick another
 // icon on tabler.io, save its outline SVG in scripts/icons/, and name it in `pictures` below.
 import sharp from 'sharp';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -47,23 +48,6 @@ const pictures = {
   'connect.png': [232, 117, 'messages', card],
 
   'news-link.png': [436, 278, 'news'],
-  'blog_mast.png': [834, 233, 'feather', { x: 150, size: 110 }],
-
-  'beliefs-1.png': [400, 263, 'building-bank'],
-  'bible_compass.png': [445, 293, 'compass'],
-  'bible_hourglass.png': [577, 381, 'seedling'],
-  'bible_laptop.png': [469, 310, 'device-laptop'],
-  'compass.png': [400, 264, 'users'],
-  'distinctives.png': [400, 262, 'flame'],
-  'faq_worship.png': [366, 366, 'pray', { size: 150 }],
-  'generations.png': [453, 289, 'users-group'],
-  'hourglass.png': [400, 262, 'hourglass'],
-  'library.png': [400, 245, 'books'],
-  'neighbors.png': [400, 264, 'building-community'],
-  'pulpit.png': [400, 264, 'podium'],
-  'searching.png': [400, 263, 'road'],
-  'study.png': [400, 262, 'book'],
-  'worship.png': [400, 263, 'music'],
 };
 
 for (const [file, [w, h, name, opts]] of Object.entries(pictures)) {
@@ -72,18 +56,3 @@ for (const [file, [w, h, name, opts]] of Object.entries(pictures)) {
   else await img.png({ palette: true, quality: 90, compressionLevel: 9 }).toFile(uploads + file);
   console.log(file, '←', name);
 }
-
-// The home page hero: a faint scattering of the same icons, used as an SVG.
-const heroIcons = ['bible', 'cross', 'building-church', 'book', 'music', 'tree', 'pray', 'flame'];
-const cell = 120, cols = 14, rows = 6;
-let tiles = '';
-for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
-  const name = heroIcons[(r * 3 + c) % heroIcons.length];
-  const x = c * cell + (r % 2 ? cell / 2 : 0) + 34, y = r * cell + 34;
-  tiles += `<g transform="translate(${x} ${y}) scale(2.2)">${icon(name)}</g>`;
-}
-writeFileSync(`${root}src/assets/img/hero-icons.svg`,
-  `<svg xmlns="http://www.w3.org/2000/svg" width="${cols * cell}" height="${rows * cell}" viewBox="0 0 ${cols * cell} ${rows * cell}" preserveAspectRatio="xMidYMid slice">
-<g fill="none" stroke="${gilt}" stroke-opacity=".12" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">${tiles}</g>
-</svg>
-`);
