@@ -73,6 +73,36 @@ Text of the post…
 
 Images go in `src/wp-content/uploads/` (the old WordPress paths are kept so old image links work). Authors and categories are listed in `src/_data/authorList.json` and `src/_data/categoryList.json`.
 
+## Stock photos
+
+The pictures in `src/wp-content/uploads/2019/01/` that held the old WordPress site's stock photos now hold new free photos, each cropped to the old picture's size and saved at its old address, so old links and social previews keep working. All of them are public domain (CC0): they can be used and edited without permission or credit. The sources are listed here so each one can be traced.
+
+| File | Photo | From |
+| --- | --- | --- |
+| `beliefs-1.png` | [Woman reading bible table](https://www.rawpixel.com/image/3298625/free-photo-image-womans-bible-crossword-study-images) | rawpixel |
+| `bible_compass.png` | [Compass Map](https://stocksnap.io/photo/compass-map-UGFCFONZQA) | StockSnap |
+| `bible_hourglass.png` | [Free entangled tree roots image](https://www.rawpixel.com/image/5910136/image-public-domain-trees-wood) | rawpixel |
+| `bible_laptop.png` | [Laptop Desk](https://stocksnap.io/photo/laptop-desk-WTSQO9T3DK) | StockSnap |
+| `blog_mast.png` | [Notebook Notepad](https://stocksnap.io/photo/notebook-notepad-UUY821MG70) | StockSnap |
+| `compass.png` | [Animals Sheep](https://stocksnap.io/photo/animals-sheep-TXRK85IP8S) | StockSnap |
+| `connect.png` | [Iphone Phone](https://stocksnap.io/photo/iphone-phone-70FE8C00C9) | StockSnap |
+| `distinctives.png` | [Old Books](https://stocksnap.io/photo/old-books-14QY2T9UPC) | StockSnap |
+| `faq_worship.png` | [Vintage church building countryside](https://www.rawpixel.com/image/6027247/photo-image-public-domain-tree-plant) | rawpixel |
+| `FS-bible11.jpg` | [Still Items](https://stocksnap.io/photo/still-items-0DS255SCBZ) | StockSnap |
+| `FS-rooted.jpg` | [Tree roots close up](https://www.rawpixel.com/image/5901149/tree-roots-close-up-free-public-domain-cc0-photo) | rawpixel |
+| `generations.png` | [Young Girl](https://stocksnap.io/photo/young-girl-C0WTUJ65SZ) | StockSnap |
+| `hourglass.png` | [An hourglass with wooden top and bottom and gold metal structure with dark pink sand inside.](https://wordpress.org/photos/photo/98365ccf5b/) | WordPress Photo Directory |
+| `library.png` | [Library Books](https://stocksnap.io/photo/library-books-C4001BDB1C) | StockSnap |
+| `listen_sermon.png` | [Headphones Audio](https://stocksnap.io/photo/headphones-audio-16FDCF0DFC) | StockSnap |
+| `looking_church.png` | [Vintage church building countryside](https://www.rawpixel.com/image/6039252/photo-image-public-domain-free-building) | rawpixel |
+| `neighbors.png` | [Santamonica Street](https://stocksnap.io/photo/santamonica-street-EE7CC8DF17) | StockSnap |
+| `news-link.png` | [Free newspaper table closeup image](https://www.rawpixel.com/image/5920382/photo-image-paper-public-domain-wooden) | rawpixel |
+| `pulpit.png` | [Ancient bible book](https://www.rawpixel.com/image/6041024/ancient-bible-book-free-public-domain-cc0-photo) | rawpixel |
+| `searching.png` | [Road Path](https://stocksnap.io/photo/road-path-PZ6QGMVQTA) | StockSnap |
+| `SL-family.jpg` | [Silhouette Family](https://stocksnap.io/photo/silhouette-family-Q7UIKF58IR) | StockSnap |
+| `study.png` | [Book Bible](https://stocksnap.io/photo/book-bible-VRU2C8T6L1) | StockSnap |
+| `worship.png` | [Church Interior](https://stocksnap.io/photo/church-interior-NLKKBIH0J3) | StockSnap |
+
 ## Contact form
 
 The form on `/contact/` (and on the Men's Advance and Pilgrim Heritage pages) sends its message through [Web3Forms](https://web3forms.com), a free service (250 messages a month) that emails each message to the inbox of the Web3Forms account that owns the form. The email's subject is "Message from the Covenant Family Church website", and **Reply** goes to the visitor. Sent messages are also kept in that account's dashboard at [app.web3forms.com](https://app.web3forms.com). If `contactForm` in `src/_data/site.json` is ever emptied, pressing **Send message** opens the visitor's email app instead, with the message addressed to the email in `site.json`.
