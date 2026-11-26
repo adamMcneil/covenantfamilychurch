@@ -71,7 +71,9 @@
 
   // Contact form: posts to the configured form service, or falls back to
   // opening the visitor's email app when no service is set up yet.
-  document.querySelectorAll('.contact-form').forEach(form => {
+  // Only forms with data-mailto: the member sign-in forms share the .contact-form look but
+  // are handled by members.js, and have no botcheck or status line for this code to use.
+  document.querySelectorAll('.contact-form[data-mailto]').forEach(form => {
     const status = form.querySelector('.form-status');
     form.addEventListener('submit', async e => {
       e.preventDefault();
