@@ -34,28 +34,20 @@ jobs:
       - run: npm run check
         env:
           PATH_PREFIX: ${{ steps.pages.outputs.base_path }}/
-      # Previews: each branch listed in PREVIEW_BRANCHES is also built into /preview/<branch>/,
-      # so it can be looked at on the real site before it is merged. A preview that fails to
-      # build is skipped with a warning; it never stops the main site deploying. Pushing to a
-      # preview branch doesn't redeploy by itself: run this workflow afterwards (Actions tab →
-      # Deploy to GitHub Pages → Run workflow, or `gh workflow run deploy.yml`).
+      # Previews: each branch listed in PREVIEW_BRANCHES (branch name, then the label the
+      # version picker shows) is also built into /preview/<branch>/, so it can be looked at on
+      # the real site before it is merged, and every page gets a picker to switch between them
+      # (.github/previews/). A preview that fails to build is skipped with a warning; it never
+      # stops the main site deploying. Pushing to a preview branch doesn't redeploy by itself:
+      # run this workflow afterwards (Actions tab → Deploy to GitHub Pages → Run workflow, or
+      # `gh workflow run deploy.yml`).
       - name: Build branch previews
         env:
           BASE: ${{ steps.pages.outputs.base_path }}
-          PREVIEW_BRANCHES: stock-photos tabler-icons
-        run: |
-          for b in $PREVIEW_BRANCHES; do
-            dir="$RUNNER_TEMP/preview-$b"
-            if git fetch --depth 1 origin "refs/heads/$b:refs/remotes/origin/$b" \
-              && git worktree add --detach "$dir" "origin/$b" \
-              && (cd "$dir" && npm ci && PATH_PREFIX="$BASE/preview/$b/" npm run build && PATH_PREFIX="$BASE/preview/$b/" npm run check); then
-              mkdir -p "_site/preview/$b"
-              cp -r "$dir/_site/." "_site/preview/$b/"
-              echo "Preview of $b: ${{ steps.pages.outputs.base_url }}/preview/$b/" >> "$GITHUB_STEP_SUMMARY"
-            else
-              echo "::warning::The preview of branch $b did not build; skipping it."
-            fi
-          done
+          PREVIEW_BRANCHES: |
+            stock-photos Stock photos
+            tabler-icons Icons
+        run: .github/previews/build-previews.sh
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
